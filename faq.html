@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQs | Our Catering Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: relative;
+            border-radius: 8px;
+        }
+
+        .faq-question:hover {
+            background-color: #e1e1e1;
+        }
+
+        .faq-question-icon {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question-text {
+            flex: 1;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            line-height: 1.5;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .faq-question.active .faq-question-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-question.active .faq-answer {
+            max-height: 1000px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+        }
+
+        .faq-answer p {
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(function(question) {
+                question.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const answer = this.nextElementSibling;
+                    if (this.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        answer.style.maxHeight = null;
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="faq-container">
+        <div class="faq-question">
+            <div class="faq-question-text">What catering services do you provide?</div>
+            <i class="fas fa-chevron-down faq-question-icon"></i>
+        </div>
+        <div class="faq-answer">
+            <p>We provide a wide range of catering services, including:</p>
+            <ul>
+                <li>Corporate event catering</li>
+                <li>Wedding catering</li>
+                <li>Private party catering</li>
+                <li>Buffet catering</li>
+                <li>Custom menu creation</li>
+                <li>And much more!</li>
+            </ul>
+        </div>
+
+        <div class="faq-question">
+            <div class="faq-question-text">How much do your services cost?</div>
+            <i class="fas fa-chevron-down faq-question-icon"></i>
+        </div>
+        <div class="faq-answer">
+            <p>The cost of our services varies depending on several factors, including:</p>
+            <ul>
+                <li>Event type and size</li>
+                <li>Menu selection</li>
+                <li>Additional services required</li>
+            </ul>
+            <p>Please contact us with specific details about your event to get a personalized quote.</p>
+        </div>
+
+        <div class="faq-question">
+            <div class="faq-question-text">Do you cater for dietary restrictions?</div>
+            <i class="fas fa-chevron-down faq-question-icon"></i>
+        </div>
+        <div class="faq-answer">
+            <p>Yes, we cater for a variety of dietary restrictions, including:</p>
+            <ul>
+                <li>Vegan</li>
+                <li>Vegetarian</li>
+                <li>Gluten-free</li>
+                <li>Lactose-free</li>
+                <li>And other specific dietary needs</li>
+            </ul>
+            <p>We ensure that our menu options are diverse and accommodating to meet the dietary requirements of all guests.</p>
+        </div>
+
+        <!-- Add more questions as needed -->
+    </div>
+</body>
+</html>

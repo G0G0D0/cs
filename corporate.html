@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Corporate Clients | Our Catering Service</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f3f3f3;
+        }
+
+        .client-card {
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            background: #ffffff;
+            color: #333;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+            height: 200px;
+            margin: 15px;
+        }
+
+        .client-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 20px 20px rgba(0,0,0,0.15);
+        }
+
+        .material-icons {
+            font-size: 48px;
+            color: #333;
+        }
+
+        .client-logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Companies We've Catered For</h1>
+    <div class="row justify-content-center" id="client-grid">
+        <!-- JavaScript will populate the client cards -->
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="clientModal" tabindex="-1" role="dialog" aria-labelledby="clientModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="clientModalLabel">Client Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="clientModalText">We have catered to <strong><span id="clientName"></span></strong> on several occasions, providing...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        const clients = [
+            {name: 'iopex', logo: 'images/iopex.jpg'},
+            {name: 'Kone ', logo: 'images/kone.png'},
+            {name: 'Indus Towers ', logo: 'images/indus.jpeg'},
+            {name: 'TCL ', logo: 'images/tcl.png'},
+            {name: 'Colors Tamil ', logo: 'images/colors.png'},
+            {name: '3I ', logo: 'images/3I.png'},
+            {name: 'V Care', logo: 'images/vcare.webp'},
+            {name: 'Viasat', logo: 'images/viasat.jpeg'},
+            {name: 'HCL', logo: 'images/hcl.png'},
+            {name: 'TCS', logo: 'images/tcs.jpeg'},
+            {name: 'Vijay Television', logo: 'images/vijay.jpeg'},
+            {name: 'Zee Tamil', logo: 'images/zee.jpeg'},
+            {name: 'Cams', logo: 'images/cams.jpeg'},
+            {name: 'CMA CGM', logo: 'images/cma.jpeg'},
+            {name: 'AMT Technologies', logo: 'images/amt.png'},
+            // and so on for each client
+        ];
+
+        const grid = document.getElementById('client-grid');
+
+        clients.forEach(client => {
+            const card = document.createElement('div');
+            card.className = 'card client-card col-md-3';
+            card.innerHTML = `
+                <div class="card-body text-center">
+                    <img src="${client.logo}" alt="${client.name} Logo" class="client-logo" />
+                    <h5 class="card-title">${client.name}</h5>
+                     <p class="card-text"><i class="material-icons">restaurant_menu</i></p>
+
+                </div>
+            `;
+            card.addEventListener('click', () => {
+                $('#clientName').text(client.name);
+                $('#clientModal').modal('show');
+            });
+            grid.appendChild(card);
+        });
+    </script>
+</body>
+</html>

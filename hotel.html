@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotels - Trupthi Tiffin Centre</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #fff;
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .outlet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .outlet {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            background: linear-gradient(45deg, #2980b9, #2c3e50);
+            color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform-style: preserve-3d;
+            transform: translateZ(0);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .outlet:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .outlet:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .outlet:hover:before {
+            opacity: 1;
+        }
+
+        .outlet-image {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+
+        .outlet:hover .outlet-image {
+            transform: scale(1.05);
+        }
+
+        .outlet-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .outlet h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .outlet p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .outlet-description {
+            font-size: 14px;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+
+        .outlet-extra-info {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .star-rating {
+            display: inline-block;
+            vertical-align: middle;
+            color: #ffd700;
+        }
+
+        .star-rating::before {
+            content: "\2605";
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hotels - Trupthi Tiffin Centre</h1>
+    </header>
+
+    <div class="outlet-grid">
+        <div class="outlet">
+            <img class="outlet-image" src="https://lh3.googleusercontent.com/p/AF1QipPDV9R-YxZGXXMv9hmdI6I33TKJzbxlmAk1uTrG=s1360-w1360-h1020" alt="Outlet 1">
+            <div class="outlet-info">
+                <h2>Outlet 1</h2>
+                <p>Location: Vellala street, Ayanavaram, Chennai-600023</p>
+                <p class="outlet-description">Contact Details: 9841131113, Selective Home develivary available</p>
+                <p class="outlet-extra-info">Specialties: Exquisite cuisine, Cozy ambiance</p>
+                <p class="outlet-extra-info">Hygiene Rating: <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9734;</span></p>
+                <p class="outlet-extra-info">Affordability: <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
+                <p class="outlet-extra-info">Why choose us: Our hotel offers a delightful dining experience with a wide range of delicious dishes. We prioritize hygiene to ensure a safe and healthy environment for our customers. Enjoy quality food at an affordable price.</p>
+            </div>
+        </div>
+
+        <div class="outlet">
+            <img class="outlet-image" src="https://lh3.googleusercontent.com/p/AF1QipPPGQXQ_a_T-fnX9-ExOJ_Y8TW7XsqkVhduJLR0=s1360-w1360-h1020" alt="Outlet 2">
+            <div class="outlet-info">
+                <h2>Outlet 2</h2>
+                <p>Location: Konnur high road, Ayanavaram, Chennai-600023</p>
+                <p class="outlet-description">Contact Details: 9841131113, Selective Home develivary available</p>
+                <p class="outlet-extra-info">Specialties: Traditional dishes, Friendly staff</p>
+                <p class="outlet-extra-info">Hygiene Rating: <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
+                <p class="outlet-extra-info">Affordability: <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9734;</span></p>
+                <p class="outlet-extra-info">Why choose us: Our hotel offers authentic traditional cuisine served by our friendly staff. We maintain high hygiene standards to ensure a safe dining experience. Enjoy the taste of our affordable and delicious dishes.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
